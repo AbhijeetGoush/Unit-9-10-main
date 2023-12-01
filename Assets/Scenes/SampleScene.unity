@@ -469,7 +469,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTMP: {fileID: 410713319}
+  scoreTextObj: {fileID: 0}
   score: 0
+  scoreStr: 
 --- !u!114 &272295196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +507,7 @@ GameObject:
   - component: {fileID: 410713319}
   m_Layer: 5
   m_Name: Score text
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

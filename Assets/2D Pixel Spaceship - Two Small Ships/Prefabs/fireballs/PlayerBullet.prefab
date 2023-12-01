@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9768133252c774e8f7ee6876e76902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  scoreManager: {fileID: 0}
+  speed: 50
   fireballPrefab: {fileID: 1975644950619176}
   fireballTrans: {fileID: 4642599613617860}
   cameraObj: {fileID: 0}
