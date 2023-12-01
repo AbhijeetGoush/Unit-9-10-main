@@ -17,7 +17,7 @@ public class Joystick : MonoBehaviour
     void Update()
     {
         float leftSideThreshold = Screen.width * 0.5f;
-        
+
         for (int i = 0; i < Input.touchCount; i++)
         {
             Touch touch = Input.GetTouch(0);
@@ -26,9 +26,9 @@ public class Joystick : MonoBehaviour
             {
                 if (touch.position.x < leftSideThreshold)
                 {
-                    pointA = new Vector3(-8, -3, Camera.main.transform.position.z);
+                    pointA = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.transform.position.z));
 
-                    outerCircle.transform.position = new Vector2(-8, -3);
+                    outerCircle.transform.position = new Vector2(pointA.x, pointA.y);
                     circle.GetComponent<SpriteRenderer>().enabled = true;
                     outerCircle.GetComponent<SpriteRenderer>().enabled = true;
                     playerFlame.GetComponent<SpriteRenderer>().enabled = true;
@@ -41,13 +41,13 @@ public class Joystick : MonoBehaviour
 
             if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
-                if(touch.position.x < leftSideThreshold)
+                if (touch.position.x < leftSideThreshold)
                 {
                     touchStart = true;
                     pointB = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.transform.position.z));
                     circle.GetComponent<SpriteRenderer>().enabled = true;
                     outerCircle.GetComponent<SpriteRenderer>().enabled = true;
-                    playerFlame.GetComponent <SpriteRenderer>().enabled = true;
+                    playerFlame.GetComponent<SpriteRenderer>().enabled = true;
                 }
             }
             else
